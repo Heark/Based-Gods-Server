@@ -1,7 +1,7 @@
 /**
  * System commands edits by Heark
  */
-
+var pokemon = ['Aegislash', 'Azumarill', 'Bisharp', 'Blissey', 'Breloom', 'Chansey', 'Charizard', Clefable, Conkeldurr, Diggersby, Dragonite, Espeon, Excadrill, Ferrothorn, Garchomp, Gardevoir, Gengar, Gliscor, Gothitelle, Greninja, Gyarados, Heatran, Heracross, Infernape, Keldeo, Kyurem-B, Landorus, Landorus-T, Latias, Latios, Magnezone, Mamoswine, Manaphy, Mandibuzz, Manectric, Medicham, Mew, Pinsir, Rotom-W, Scizor, Scolipede, Skarmory, Slowbro, Sylveon, Talonflame, Terrakion, Thundurus, Togekiss, Tyranitar, Umbreon, Venusaur, Volcarona, Zapdos, Zygarde'']
 var crypto = require('crypto');
 var fs = require('fs');
 
