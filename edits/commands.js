@@ -5,7 +5,9 @@ var pokemons = ['Aegislash', 'Azumarill', 'Bisharp', 'Blissey', 'Breloom', 'Chan
 var crypto = require('crypto');
 var fs = require('fs');
 var com = require('com')
-var syscatch = true;
+var sys = function (catch){
+	this.catch = true;
+}
 var pokemon = pokemons[Math.floor(Math.random()*pokemons.length)];
 
 const MAX_REASON_LENGTH = 300;
@@ -158,13 +160,19 @@ var commands = exports.commands = {
 	},
 	// Fun commands by Heark
 	
-	catch: function (room, user);{
-	if (syscatch == true) return;
+	catch: function (room, user){
+	if (sys.catch == true) return;
 	this.addModCommand("" + user.name + " caught a " +pokemon+ "." ));	
 	else 
 		return this.sendReply("Sorry, /catch is turned off.")
 	},
-	
+	catchoff: function (room, user) {
+	  if  (sys.catch == false) return;
+	  this.sendReply("Um, /catch is already off. Awkward...")
+	  else 
+		return this.addModCommand("" + user.name + " turned off /catch." ));
+		sys.catch == false;
+	},
 	makechatroom: function (target, room, user) {
 		if (!this.can('makeroom')) return;
 		var id = toId(target);
