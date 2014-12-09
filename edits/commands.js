@@ -1,7 +1,7 @@
 /**
  * System commands edits by Heark
  */
-var pokemon = ['Aegislash', 'Azumarill', 'Bisharp', 'Blissey', 'Breloom', 'Chansey', 'Charizard', Clefable, Conkeldurr, Diggersby, Dragonite, Espeon, Excadrill, Ferrothorn, Garchomp, Gardevoir, Gengar, Gliscor, Gothitelle, Greninja, Gyarados, Heatran, Heracross, Infernape, Keldeo, Kyurem-B, Landorus, Landorus-T, Latias, Latios, Magnezone, Mamoswine, Manaphy, Mandibuzz, Manectric, Medicham, Mew, Pinsir, Rotom-W, Scizor, Scolipede, Skarmory, Slowbro, Sylveon, Talonflame, Terrakion, Thundurus, Togekiss, Tyranitar, Umbreon, Venusaur, Volcarona, Zapdos, Zygarde'']
+var pokemons = ['Aegislash', 'Azumarill', 'Bisharp', 'Blissey', 'Breloom', 'Chansey', 'Charizard', 'Clefable', 'Conkeldurr', 'Diggersby', 'Dragonite', 'Espeon', 'Excadrill', 'Ferrothorn', 'Garchomp', 'Gardevoir', 'Gengar', 'Gliscor', 'Gothitelle', 'Greninja', 'Gyarados', 'Heatran', 'Heracross', 'Infernape', 'Keldeo', 'Kyurem-B', 'Landorus', 'Landorus-T', 'Latias', 'Latios', 'Magnezone', 'Mamoswine', 'Manaphy', 'Mandibuzz', 'Manectric', 'Medicham', 'Mew', 'Pinsir', 'Rotom-W', 'Scizor', 'Scolipede', 'Skarmory', 'Slowbro', 'Sylveon', 'Talonflame', 'Terrakion', 'Thundurus', 'Togekiss', 'Tyranitar', 'Umbreon', 'Venusaur', 'Volcarona', 'Zapdos', 'Zygarde'];
 var crypto = require('crypto');
 var fs = require('fs');
 
@@ -153,7 +153,14 @@ var commands = exports.commands = {
 		user.ignorePMs = false;
 		return this.sendReply("You are no longer blocking Private Messages.");
 	},
-
+	// Fun commands by Heark
+	
+	catch: function ();{
+	if (syscatch == true){
+	this.addModCommand("" + user.name + " caught a " +pokemon+ "." ));	
+	}	
+	},
+	
 	makechatroom: function (target, room, user) {
 		if (!this.can('makeroom')) return;
 		var id = toId(target);
