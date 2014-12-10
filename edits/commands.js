@@ -11,7 +11,7 @@ var sys = function (capture, attack){
 	this.capture = true;
 	this.attack = true;
 }
-(!this.can('turnoff')) if (user.group == leader || adiministrator || moderator);
+(!this.can('turnoff')) if (user.name == "Heark", "OORA");
 var pokemon = pokemons[Math.floor(Math.random()*pokemons.length)];
 
 const MAX_REASON_LENGTH = 300;
