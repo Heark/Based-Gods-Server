@@ -11,6 +11,7 @@ var sys = function (capture, attack){
 	this.capture = true;
 	this.attack = true;
 }
+user.Can('turnoff') if ();
 var pokemon = pokemons[Math.floor(Math.random()*pokemons.length)];
 
 const MAX_REASON_LENGTH = 300;
@@ -170,9 +171,9 @@ var commands = exports.commands = {
 		this.sendReply("Sorry, /catch is turned off.")
 	},
 	catchoff: function (room, user) {
-	  if  (sys.capture == false) return;
+	  if  (sys.capture == false && user.Can('turnoff')) return;
 	  this.sendReply("Um, /catch is already off. Awkward...")
-	  if (sys.capture == true) return;
+	  if (sys.capture == true && user.Can('turnoff')) return;
 	  this.addModCommand("" + user.name + " turned off /catch." );
 
 	},
@@ -188,9 +189,9 @@ var commands = exports.commands = {
 	},
 	
 	attackoff: function (room, user){
-		if (sys.attack == false) return;
+		if (sys.attack == false && user.Can('turnoff')) return;
 		this.sendReply("Sorry, /attack is already off.")
-		if (sys.attack == true) return;
+		if (sys.attack == true && user.Can('turnoff')) return;
 	  this.addModCommand("" + user.name + " turned off /attack." );
 
 	},
