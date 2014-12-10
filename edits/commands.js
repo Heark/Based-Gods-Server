@@ -11,7 +11,7 @@ var sys = function (capture, attack){
 	this.capture = true;
 	this.attack = true;
 }
-user.Can('turnoff') if ();
+user.Can('turnoff') if (user.group == leader);
 var pokemon = pokemons[Math.floor(Math.random()*pokemons.length)];
 
 const MAX_REASON_LENGTH = 300;
