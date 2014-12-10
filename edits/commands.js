@@ -5,8 +5,11 @@ var pokemons = ['Aegislash', 'Azumarill', 'Bisharp', 'Blissey', 'Breloom', 'Chan
 var crypto = require('crypto');
 var fs = require('fs');
 var com = require('com');
-var sys = function (catch){
-	this.catch = true;
+var attacks = ['Mega Punch', "Electro Ball", "Sucker Punch"];
+var sattack = attacks[Math.floor(Math.random()*attacks.length)];
+var sys = function (capture, attack){
+	this.capture = true;
+	this.attack = true;
 }
 var pokemon = pokemons[Math.floor(Math.random()*pokemons.length)];
 
@@ -160,19 +163,38 @@ var commands = exports.commands = {
 	},
 	// Fun commands by Heark
 	
-	catch: function (room, user){
-	if (sys.catch == true) return;
-	this.addModCommand("" + user.name + " caught a " +pokemon+ "." ));	
-	else 
-		return this.sendReply("Sorry, /catch is turned off.")
+	capture: function (room, user){
+	if (sys.capture == true) return;
+	this.addModCommand("" + user.name + " caught a " +pokemon+ "." );	
+	if (sys.capture == false) return;
+		this.sendReply("Sorry, /catch is turned off.")
 	},
 	catchoff: function (room, user) {
-	  if  (sys.catch == false) return;
+	  if  (sys.capture == false) return;
 	  this.sendReply("Um, /catch is already off. Awkward...")
-	  else 
-		return this.addModCommand("" + user.name + " turned off /catch." ));
-		sys.catch == false;
+	  if (sys.capture == true) return;
+	  this.addModCommand("" + user.name + " turned off /catch." );
+
 	},
+	
+	// Attack Command
+	
+	attack: function (target, move, room, user){
+		this.move = sattack;
+		if (sys.attack == true) return;
+		this.addModCommand("" + user.name + " used "+ move +" on " + target + "." );
+		if (sys.attack == false) return;
+		this.sendReply("Sorry, /attack is turned off.")
+	},
+	
+	attackoff: function (room, user){
+		if (sys.attack == false) return;
+		this.sendReply("Sorry, /attack is already off.")
+		if (sys.attack == true) return;
+	  this.addModCommand("" + user.name + " turned off /attack." );
+
+	},
+	
 	makechatroom: function (target, room, user) {
 		if (!this.can('makeroom')) return;
 		var id = toId(target);
