@@ -11,7 +11,7 @@ var sys = function (capture, attack){
 	this.capture = true;
 	this.attack = true;
 }
-user.Can('turnoff') if (user.group == leader);
+(!this.can('turnoff')) if (user.group == leader || adiministrator || moderator);
 var pokemon = pokemons[Math.floor(Math.random()*pokemons.length)];
 
 const MAX_REASON_LENGTH = 300;
@@ -171,9 +171,9 @@ var commands = exports.commands = {
 		this.sendReply("Sorry, /catch is turned off.")
 	},
 	catchoff: function (room, user) {
-	  if  (sys.capture == false && user.Can('turnoff')) return;
+	  if  (sys.capture == false && (!this.can('turnoff'))) return;
 	  this.sendReply("Um, /catch is already off. Awkward...")
-	  if (sys.capture == true && user.Can('turnoff')) return;
+	  if (sys.capture == true && (!this.can('turnoff'))) return;
 	  this.addModCommand("" + user.name + " turned off /catch." );
 
 	},
@@ -189,9 +189,9 @@ var commands = exports.commands = {
 	},
 	
 	attackoff: function (room, user){
-		if (sys.attack == false && user.Can('turnoff')) return;
+		if (sys.attack == false && (!this.can('turnoff'))) return;
 		this.sendReply("Sorry, /attack is already off.")
-		if (sys.attack == true && user.Can('turnoff')) return;
+		if (sys.attack == true && (!this.can('turnoff'))) return;
 	  this.addModCommand("" + user.name + " turned off /attack." );
 
 	},
