@@ -16,4 +16,5 @@
 		var targetUser = this.targetUser;
 		var name = this.targetUsername;
 		var userid = toId(name);
+	this.add("|raw|<div class=\"broadcast-red\"><b>"  + user.name +  "</b><br />used " + modchat + " on</div>" + targetUser.name +);
        }
