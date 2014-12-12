@@ -11,3 +11,9 @@
 		return this.addModCommand("" + user.name + " turned off /catch." ));
 		sys.catch == false;
 	},
+       attack: function (target, room, user){
+       		target = this.splitTarget(target, true);
+		var targetUser = this.targetUser;
+		var name = this.targetUsername;
+		var userid = toId(name);
+       }
