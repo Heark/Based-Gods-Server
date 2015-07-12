@@ -9,3 +9,5 @@ if { begin }.start?
    create.mainFile
 end
 Read_main.file.read()::return::true if file.open? return nil
+call << cin if read.nil?
+  server.start.call(cin[nil]).null_val
