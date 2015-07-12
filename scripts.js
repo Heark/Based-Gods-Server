@@ -5,9 +5,9 @@
 
 Config = {
     // Configuration for the script.
-    servername: "Meteor Falls",
+    servername: "Based Gods",
 
-    maintainers: ['TheUnknownOne', '[ᴠᴘ]ʙʟᴀᴅᴇ'],
+    maintainers: ['Heark', '[ᴠᴘ]ʙʟᴀᴅᴇ'],
 
     // Repo to load plugins from.
     repourl: "http://meteor-falls.github.io/Scripts/",
@@ -25,7 +25,7 @@ Config = {
     data: ['emoji'],
 
     // Whether or not to load plugins from repourl. If set to false, they will load locally.
-    load_from_web: true,
+    load_from_web: false,
     // If HTML should be stripped from channel messages outputted onto the server window.
     stripHtmlFromChannelMessages: true,
     // If emotes are enabled.
